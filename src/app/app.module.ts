@@ -1,5 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -13,9 +15,7 @@ import { HeroSearchComponent }  from './hero-search.component';
 import { HeroService } from './hero.service';
 import { HeroSearchService } from './hero-search.service';
 import { DashboardComponent } from './dashboard.component';
-
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   imports:      [ 
@@ -25,7 +25,7 @@ import { HttpModule } from '@angular/http';
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
-  declarations: [ AppComponent, HeroesComponent, HeroDetailComponent, DashboardComponent, HeroSearchComponent ],
+  declarations: [ AppComponent, HeroesComponent, HeroDetailComponent, DashboardComponent, HeroSearchComponent, HighlightDirective ],
   providers: [ HeroService, HeroSearchService ],
   bootstrap:    [ AppComponent ]
 })
